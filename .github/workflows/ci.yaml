@@ -9,6 +9,6 @@ jobs:
   deploy:
     container:
       runs-on: [hfc-runner]
-    uses: HFC/security-metrics/.github/workflows/update_deployment_metrics.yaml@main
+    uses: gmansals/test-repo/.github/workflows/update_deployment_metrics.yaml@main
     with:
       branch-name: ${{github.ref}}
