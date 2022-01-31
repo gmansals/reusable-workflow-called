@@ -19,7 +19,7 @@ jobs:
           url: 'https://www.google.com/'
           method: 'GET'
           contentType: 'application/json'
-          customHeaders: 'x-api-key: xyz123'
+          customHeaders: '{"x-api-key":"xyz123"}'
           data: '{}' # request body
       - name: Display HTTP response
         run: echo ${{ steps.postNewDeploymentRecord.outputs.response }}
