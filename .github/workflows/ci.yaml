@@ -1,4 +1,4 @@
-name: CI
+name: Reusable action with HTTP Request
 on:
   workflow_dispatch:
   push:
@@ -7,6 +7,6 @@ on:
       - develop
 jobs:
   deploy:
-    uses: gmansals/test-repo/.github/workflows/update_deployment_metrics.yaml@main
+    uses: gmansals/test-repo/.github/workflows/make_http_request.yaml@main
     with:
       branch-name: ${{github.ref}}
