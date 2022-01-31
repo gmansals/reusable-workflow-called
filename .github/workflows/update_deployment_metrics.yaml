@@ -1,5 +1,4 @@
 name: Update deployment metrics
-name: Update deployment metrics
 on:
   workflow_dispatch:
   workflow_call:
