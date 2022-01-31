@@ -1,0 +1,14 @@
+name: CI
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - develop
+jobs:
+  deploy:
+    container:
+      runs-on: [hfc-runner]
+    uses: HFC/security-metrics/.github/workflows/update_deployment_metrics.yaml@feature/EQFC-705
+    with:
+      branch-name: ${{github.ref}}

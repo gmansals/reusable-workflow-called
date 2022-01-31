@@ -1,0 +1,26 @@
+name: Update deployment metrics
+name: Update deployment metrics
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      branch-name:
+        description: target branch
+        required: true
+        type: string
+jobs:
+  nonprod-deploy:
+    name: nonprod-deploy
+    if: ${{inputs.branch-name}} == 'refs/heads/develop'
+    steps:
+      - name: Update Deployment Metrics
+        id: postNewDeploymentRecord
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://test.metrics.devops.hcqis.org/ado/f83df39f-f029-4158-abf6-deef43dc63c2'
+          method: 'GET'
+          contentType: 'application/json'
+          customHeaders: 'x-api-key: D0S8mtYW.G4iDmPaJSDqPTEDd2AqHDiuwl9VXk0OMEsbiKZo8SC7S1DzcvJWMhMH6zttYgmlxDAUSSGrY1tNGJIWj0S32rfCScYHARDm6BXWht3k8PS4RbaaIfMwhCQwqLZ4x2Ayt'
+          data: '{}' # request body
+      - name: Display HTTP response
+        run: echo ${{ steps.postNewDeploymentRecord.outputs.response }}
