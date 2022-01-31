@@ -9,6 +9,7 @@ on:
 jobs:
   nonprod-deploy:
     name: nonprod-deploy
+    runs-on: ubuntu-latest
     if: ${{inputs.branch-name}} == 'refs/heads/develop'
     steps:
       - name: Update Deployment Metrics
