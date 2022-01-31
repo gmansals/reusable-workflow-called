@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Echo inputs
         run:
-          echo ${{inputs.branch-name == "refs/heads/develop"}}
+          echo ${{inputs.branch-name == refs/heads/develop}}
   nonprod-deploy:
     name: nonprod-deploy
     runs-on: ubuntu-latest
