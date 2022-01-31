@@ -18,7 +18,7 @@ jobs:
   nonprod-deploy:
     name: nonprod-deploy
     runs-on: ubuntu-latest
-    if: "${{inputs.branch-name}} == refs/heads/develop"
+    if: ${{inputs.branch-name}} == "refs/heads/develop"
     steps:
       - name: Call HTTP GET
         id: callHTTPGet
