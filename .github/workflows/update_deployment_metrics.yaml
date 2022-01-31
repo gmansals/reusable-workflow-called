@@ -1,6 +1,5 @@
 name: Update deployment metrics
 on:
-  workflow_dispatch:
   workflow_call:
     inputs:
       branch-name:
