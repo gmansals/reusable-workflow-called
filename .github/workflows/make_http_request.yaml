@@ -7,18 +7,14 @@ on:
         required: true
         type: string
 jobs:
-  display-inputs:
-    name: display-inputs
-    runs-on: ubuntu-latest
-    steps:
-      - name: Echo inputs
-        run:
-          echo ${{ ${{inputs.branch-name}} == "refs/heads/develop" }}
   nonprod-deploy:
     name: nonprod-deploy
     runs-on: ubuntu-latest
     if: ${{inputs.branch-name}} == "refs/heads/develop"
     steps:
+      - name: Echo inputs
+        run:
+          echo ${{inputs.branch-name}} == "refs/heads/develop"
       - name: Call HTTP GET
         id: callHTTPGet
         uses: fjogeleit/http-request-action@master
