@@ -7,6 +7,6 @@ on:
       - develop
 jobs:
   deploy:
-    uses: gmansals/test-repo/.github/workflows/make_http_request.yaml@main
+    uses: gmansals/reusable-workflow-sample/.github/workflows/make_http_request.yaml@main
     with:
       branch-name: ${{github.ref}}
