@@ -15,6 +15,6 @@ runs:
         echo "There are ${#strarr[*]} keys in the input"
         for (( i=0; i<${#strarr[@]}; i++ ));
         do
-            echo "$val=${strarr[$i]}" >> $GITHUB_ENV
+            echo "${strarr[$i]}=$i" >> $GITHUB_ENV
         done
         
