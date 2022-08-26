@@ -6,6 +6,6 @@ runs:
   steps:
     - shell: bash
       run: |
-      echo "MESSAGE1=hi" >> $GITHUB_ENV
-      echo "MESSAGE2=hi-hi" >> $GITHUB_ENV
+        echo "MESSAGE1=hi" >> $GITHUB_ENV
+        echo "MESSAGE2=hi-hi" >> $GITHUB_ENV
    
