@@ -15,5 +15,6 @@ runs:
         echo "There are ${#strarr[*]} keys in the input"
         for val in "${strarr[@]}";
         do
-          echo "$val=$val" >> $GITHUB_ENV
+          echo "$val=$date" >> $GITHUB_ENV
+          sleep 1
         done
