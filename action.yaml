@@ -1,0 +1,20 @@
+name: Reusable action that creates an env var
+inputs:
+  keys:
+    description: 'comma delimited key list'
+    required: true
+on:
+  workflow_call:
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        IFS=','
+        read -a strarr <<< ${{ inputs.keys }}
+        echo "There are ${#strarr[*]} keys in the input"
+        for (( i=0; i<${#strarr[@]}; i++ ));
+        do
+            echo "${strarr[$i]}=$i" >> $GITHUB_ENV
+        done
+        
