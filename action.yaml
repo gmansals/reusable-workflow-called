@@ -1,0 +1,7 @@
+name: Reusable action that creates an env var
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        echo "MESSAGE=hi" >> $GITHUB_ENV
+      shell: bash
