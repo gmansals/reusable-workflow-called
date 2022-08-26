@@ -1,0 +1,13 @@
+name: Reusable action that creates an env var
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  set-env-var:
+    name: set-env-var
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: assign
+        run: |
+          echo "MESSAGE=hi" >> $GITHUB_ENV
+    
