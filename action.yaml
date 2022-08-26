@@ -1,4 +1,6 @@
 name: Reusable action that creates an env var
+on:
+  workflow_call:
 runs:
   using: "composite"
   steps:
