@@ -13,8 +13,8 @@ runs:
         IFS=','
         read -a strarr <<< ${{ inputs.keys }}
         echo "There are ${#strarr[*]} keys in the input"
-        for val in "${strarr[@]}";
+        for (( i=0; i<${#strarr[@]}; i++ ));
         do
-          echo "$val=$date" >> $GITHUB_ENV
-          sleep 1
+            echo "$val=${strarr[$i]}" >> $GITHUB_ENV
         done
+        
